@@ -29,5 +29,7 @@ namespace FluentTester.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<FluentTester.Models.Person> People { get; set; }
     }
 }
