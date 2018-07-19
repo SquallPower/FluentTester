@@ -74,3 +74,5 @@ C:\WebApp\FluentTester\FluentTester\FluentTester\bin\Microsoft.Owin.Security.Mic
 C:\WebApp\FluentTester\FluentTester\FluentTester\obj\Debug\FluentTester.csprojResolveAssemblyReference.cache
 C:\WebApp\FluentTester\FluentTester\FluentTester\obj\Debug\FluentTester.dll
 C:\WebApp\FluentTester\FluentTester\FluentTester\obj\Debug\FluentTester.pdb
+C:\WebApp\FluentTester\FluentTester\FluentTester\obj\Debug\FluentTester.Migrations.Newupdate.resources
+C:\WebApp\FluentTester\FluentTester\FluentTester\obj\Debug\FluentTester.csproj.GenerateResource.Cache

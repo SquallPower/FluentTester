@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using FluentTester.Models;
 using FluentTester.Validator;
+using FluentValidation.Mvc;
 
 namespace FluentTester.Controllers
 {
@@ -20,7 +21,7 @@ namespace FluentTester.Controllers
         {
             var sam = new Person();
             var validator = new PersonValidator();
-            var results = validator.Validate(sam, ruleSet: "MyRuleset");
+            var results = validator.Validate(sam, ruleSet: "Combo");
 
             return View(db.People.ToList());
         }
@@ -51,12 +52,17 @@ namespace FluentTester.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Email,Age")] Person person)
+        public ActionResult Create([CustomizeValidator(RuleSet = "*")] Person person)
         {
+
+            var validator = new PersonValidator();
+            var john = new Person();
+            var result = validator.Validate(person);
+
             if (ModelState.IsValid)
             {
-                db.People.Add(person);
-                db.SaveChanges();
+                //db.People.Add(person);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 

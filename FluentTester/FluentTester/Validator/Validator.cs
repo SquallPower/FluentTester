@@ -11,10 +11,12 @@ namespace FluentTester.Validator
     {
         public PersonValidator()
         {
-            RuleFor(x => x.Id).NotNull();
-            RuleFor(x => x.Name).Length(0, 10);
-            RuleFor(x => x.Email).EmailAddress();
-            RuleFor(x => x.Age).InclusiveBetween(18, 60);
+            RuleSet("Combo", () => {
+                RuleFor(x => x.Name).NotEmpty();
+                RuleFor(x => x.Email).NotEmpty();
+            });
+
+            RuleFor(x => x.Age).Equal(3);
         }
     }
 }
